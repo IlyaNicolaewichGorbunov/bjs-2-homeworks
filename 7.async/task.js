@@ -5,9 +5,9 @@ class AlarmClock {
     }
 
     addClock(time, callback) {
-        if ((time.length && callback.length)> 0){
+        if (time && callback){  
             
-            if (this.alarmCollection.length >0) {
+            if (this.alarmCollection.length > 0) {
                 for (let i = 1; i < this.alarmCollection.length; i=i+1) {
                     if (this.alarmCollection[i-1].time === time) {
                     console.warn('Уже присутствует звонок на это же время');
@@ -68,14 +68,3 @@ class AlarmClock {
     }
 }
 
-//в последнем тесте код обращается сюда:
-//it('будильник должен запускать интервал, который не запустит колбек', (done) => {
- // clock.addClock("16:45", f => f);
-   /// clock.getCurrentFormattedTime = () => "17:00";
-  //  clock.start();
-
-  //  setTimeout(() => {
-  //    expect(clock.alarmCollection[0].canCall).toBe(true);
-   //   done();
-   // }, 1000);
- // });
